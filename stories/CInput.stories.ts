@@ -1,10 +1,9 @@
 import { ref } from "vue";
 import { userEvent, within } from "@storybook/testing-library";
-import { expect } from "@storybook/jest";
 import type { Meta, StoryObj } from "@storybook/vue3";
 import CInput from "../components/CInput.vue";
 
-const meta = {
+const meta: Meta<typeof CInput> = {
   title: "CInput",
   component: CInput,
 };
@@ -16,13 +15,11 @@ export const Primary: Story = {
   render: (args) => ({
     components: { CInput },
     setup() {
-      return { args };
+      const text = ref("");
+      return { args, text };
     },
-    template: '<CInput v-bind="args" />',
+    template: '<CInput v-model="text" />',
   }),
-  args: {
-    modelValue: "primary",
-  },
 };
 
 Primary.parameters = { ...Primary.parameters };

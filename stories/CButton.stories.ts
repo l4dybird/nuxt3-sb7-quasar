@@ -3,7 +3,7 @@ import { expect } from "@storybook/jest";
 import type { Meta, StoryObj } from "@storybook/vue3";
 import CButton from "../components/CButton.vue";
 
-const meta = {
+const meta: Meta<typeof CButton> = {
   title: "CButton",
   component: CButton,
 };
@@ -25,8 +25,11 @@ export const Primary: Story = {
 };
 
 Primary.parameters = { ...Primary.parameters };
-Primary.play = async ({ canvasElement }) => {
+Primary.play = async ({ canvasElement, args }) => {
   const canvas = within(canvasElement);
 
-  expect(canvas.getByText("primary").textContent).toBe("primary");
+  // HACK: Props に対する型エラーの解消方法を検討する
+  expect((await canvas.findAllByRole("button"))[0].innerHTML).toContain(
+    args.label
+  );
 };
