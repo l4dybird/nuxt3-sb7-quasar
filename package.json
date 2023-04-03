@@ -8,32 +8,31 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "storybook": "storybook dev --port=6006",
-    "storybook:build": "storybook build",
-    "storybook:test": "storybook test"
+    "storybook:build": "storybook build"
   },
   "devDependencies": {
     "@nuxt/devtools": "npm:@nuxt/devtools-edge@latest",
-    "@quasar/extras": "^1.16.2",
+    "@quasar/extras": "1.16.2",
     "@quasar/vite-plugin": "1.3.0",
-    "@storybook/addon-actions": "^7.0.0",
-    "@storybook/addon-essentials": "^7.0.0",
-    "@storybook/addon-interactions": "^7.0.0",
-    "@storybook/addon-links": "^7.0.0",
-    "@storybook/builder-vite": "^7.0.0",
-    "@storybook/core-server": "^7.0.0",
-    "@storybook/jest": "^0.1.0",
-    "@storybook/testing-library": "^0.1.0",
-    "@storybook/types": "^7.0.0",
-    "@storybook/vue3": "^7.0.0",
-    "@storybook/vue3-vite": "^7.0.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "@storybook/addon-actions": "7.0.1",
+    "@storybook/addon-essentials": "7.0.1",
+    "@storybook/addon-interactions": "7.0.1",
+    "@storybook/addon-links": "7.0.1",
+    "@storybook/builder-vite": "7.0.1",
+    "@storybook/core-server": "7.0.1",
+    "@storybook/jest": "0.1.0",
+    "@storybook/testing-library": "0.1.0",
+    "@storybook/types": "7.0.1",
+    "@storybook/vue3": "7.0.1",
+    "@storybook/vue3-vite": "7.0.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
     "sass": "1.32.12",
-    "storybook": "^7.0.0"
+    "storybook": "7.0.1"
   },
   "dependencies": {
-    "nuxt": "^3.3.3",
-    "quasar": "^2.11.10"
+    "nuxt": "3.3.3",
+    "quasar": "2.11.10"
   },
   "resolutions": {
     "sass": "1.32.12"
