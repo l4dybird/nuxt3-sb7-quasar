@@ -25,7 +25,6 @@ export const Primary: Story = {
 Primary.parameters = { ...Primary.parameters };
 Primary.play = async ({ canvasElement }) => {
   const canvas = within(canvasElement);
-
   const Input = canvas.getByLabelText("Input", { selector: "input" });
 
   await userEvent.type(Input, "test");

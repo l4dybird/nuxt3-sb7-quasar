@@ -1,4 +1,4 @@
-import { within } from "@storybook/testing-library";
+import { userEvent, within } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
 import type { Meta, StoryObj } from "@storybook/vue3";
 import CButton from "../components/CButton.vue";
@@ -14,6 +14,7 @@ type Story = StoryObj<typeof CButton>;
 export const Primary: Story = {
   render: (args) => ({
     components: { CButton },
+    emits: ["click"],
     setup() {
       return { args };
     },
@@ -21,6 +22,9 @@ export const Primary: Story = {
   }),
   args: {
     label: "primary",
+  },
+  argTypes: {
+    onClick: { action: "onClick" },
   },
 };
 
