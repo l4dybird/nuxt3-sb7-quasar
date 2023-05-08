@@ -5,7 +5,7 @@ const hoge = ref<string>("");
 <template>
   <q-page class="row items-center justify-evenly">
     <div>
-      <CInput v-model="hoge" />
+      <CForm />
     </div>
   </q-page>
 </template>

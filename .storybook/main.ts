@@ -1,7 +1,6 @@
-import type { StorybookConfig } from "@storybook/types";
+import { mergeConfig } from "vite";
 
-// TODO: unplugin-auto-import を追加する
-const config: StorybookConfig = {
+export default {
   stories: ["../stories/**/*.stories.@(js|jsx|ts|tsx)"],
   framework: "@storybook/vue3-vite",
   addons: [
@@ -13,6 +12,14 @@ const config: StorybookConfig = {
   core: {
     builder: "@storybook/builder-vite",
   },
+  async viteFinal(config) {
+    // Merge custom configuration into the default config
+    return mergeConfig(config, {
+      // Add dependencies to pre-optimization
+      define: {
+        __QUASAR_SSR_SERVER__: false,
+        __QUASAR_SSR_CLIENT__: false,
+      },
+    });
+  },
 };
-
-export default config;

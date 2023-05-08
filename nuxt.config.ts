@@ -13,6 +13,12 @@ export default defineNuxtConfig({
   build: {
     transpile: ["quasar"],
   },
+  vite: {
+    define: {
+      __QUASAR_SSR_SERVER__: false,
+      __QUASAR_SSR_CLIENT__: false,
+    },
+  },
   devtools: {
     enabled: true,
     vscode: {},
