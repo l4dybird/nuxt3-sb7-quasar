@@ -22,4 +22,9 @@ export const parameters = {
       date: /Date$/,
     },
   },
+  // docs: {
+  //   story: {
+  //     inline: false,
+  //   },
+  // },
 };

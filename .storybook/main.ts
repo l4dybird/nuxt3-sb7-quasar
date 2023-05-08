@@ -1,16 +1,13 @@
-import { InlineConfig, mergeConfig } from "vite";
 import type { StorybookConfig } from "@storybook/types";
-import { resolve } from "path";
 
-const projectRootDir = resolve(__dirname);
-
+// TODO: unplugin-auto-import を追加する
 const config: StorybookConfig = {
   stories: ["../stories/**/*.stories.@(js|jsx|ts|tsx)"],
   framework: "@storybook/vue3-vite",
   addons: [
-    "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
+    "@storybook/addon-links",
     "@storybook/addon-viewport",
   ],
   core: {
