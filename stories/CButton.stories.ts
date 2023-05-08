@@ -1,4 +1,4 @@
-import { userEvent, within } from "@storybook/testing-library";
+import { within } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
 import type { Meta, StoryObj } from "@storybook/vue3";
 import CButton from "../components/CButton.vue";
@@ -11,7 +11,7 @@ const meta: Meta<typeof CButton> = {
 export default meta;
 type Story = StoryObj<typeof CButton>;
 
-export const Primary: Story = {
+export const Default: Story = {
   render: (args) => ({
     components: { CButton },
     emits: ["click"],
@@ -28,11 +28,10 @@ export const Primary: Story = {
   },
 };
 
-Primary.parameters = { ...Primary.parameters };
-Primary.play = async ({ canvasElement, args }) => {
+Default.parameters = { ...Default.parameters };
+Default.play = async ({ canvasElement, args }) => {
   const canvas = within(canvasElement);
 
-  // HACK: Props に対する型エラーの解消方法を検討する
   expect((await canvas.findAllByRole("button"))[0].innerHTML).toContain(
     args.label
   );
