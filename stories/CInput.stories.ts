@@ -1,10 +1,11 @@
 import { userEvent, within } from "@storybook/testing-library";
 import type { Meta, StoryObj } from "@storybook/vue3";
-import CInput from "../components/CInput.vue";
+import CInput from "../src/components/CInput.vue";
 
 const meta: Meta<typeof CInput> = {
   title: "CInput",
   component: CInput,
+  tags: ["autodocs"],
 };
 
 export default meta;

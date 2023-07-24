@@ -1,4 +1,6 @@
 import { mergeConfig } from "vite";
+import AutoImport from "unplugin-auto-import/vite";
+import Components from "unplugin-vue-components/vite";
 
 export default {
   stories: ["../stories/**/*.stories.@(js|jsx|ts|tsx)"],
@@ -13,6 +15,20 @@ export default {
     builder: "@storybook/builder-vite",
   },
   async viteFinal(config) {
+    config.plugins = config.plugins ?? [];
+    config.plugins.push(
+      AutoImport({
+        dts: false,
+        imports: ["vue", "vue-router"],
+      })
+    );
+    config.plugins.push(
+      Components({
+        dts: false,
+        extensions: ["vue"],
+        include: [/\.vue$/, /\.vue\?vue/],
+      })
+    );
     // Merge custom configuration into the default config
     return mergeConfig(config, {
       // Add dependencies to pre-optimization

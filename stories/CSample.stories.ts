@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
-import CSample from "../components/CSample.vue";
+import CSample from "../src/components/CSample.vue";
 
 const meta: Meta<typeof CSample> = {
   title: "CSample",

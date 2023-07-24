@@ -5,5 +5,20 @@
         "source.fixAll.eslint": true
     },
     "typescript.tsdk": "node_modules/typescript/lib",
-    "vitest.commandLine" : "npx vitest"
+    "vitest.commandLine" : "npx vitest",
+    // "workbench.activityBar.visible": true,
+    // "workbench.colorTheme": "Vitesse Dark",
+    // "workbench.editor.tabCloseButton": "left",
+    // "workbench.fontAliasing": "antialiased",
+    // "workbench.iconTheme": "file-icons",
+    // "workbench.list.smoothScrolling": true,
+    // "workbench.preferredDarkColorTheme": "Vitesse Dark",
+    // "workbench.preferredLightColorTheme": "Vitesse Light",
+    // "workbench.productIconTheme": "icons-carbon",
+    // "workbench.sideBar.location": "right",
+    // "workbench.startupEditor": "newUntitledFile",
+    // "workbench.tree.expandMode": "singleClick",
+    // "workbench.tree.indent": 10,
+    // "editor.fontFamily": "Input Mono, Fira Code, monospace",
+    // "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss06', 'zero'",
 }

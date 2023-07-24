@@ -1,3 +1,11 @@
 {
-    "recommendations": ["esbenp.prettier-vscode", "Vue.volar", "ZixuanChen.vitest-explorer"]
+    "recommendations": [
+      "esbenp.prettier-vscode",
+      "Vue.volar",
+      "ZixuanChen.vitest-explorer",
+      "antfu.icons-carbon",
+      "antfu.theme-vitesse",
+      "file-icons.file-icons",
+      "sainnhe.gruvbox-material",
+    ]
   }

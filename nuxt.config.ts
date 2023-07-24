@@ -2,8 +2,10 @@
 export default defineNuxtConfig({
   experimental: {
     watcher: "parcel",
+    typedPages: true,
   },
   ssr: false,
+  srcDir: "src/",
   css: [
     "~/assets/styles/quasar.scss",
     "quasar/dist/quasar.prod.css",
