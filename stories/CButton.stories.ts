@@ -1,38 +1,24 @@
-import { within } from "@storybook/testing-library";
-import { expect } from "@storybook/jest";
+import { expect, within } from "@storybook/test";
 import type { Meta, StoryObj } from "@storybook/vue3";
 import CButton from "../src/components/CButton.vue";
 
-const meta: Meta<typeof CButton> = {
+const meta = {
   title: "CButton",
   component: CButton,
-};
+  tags: ["autodocs"],
+} satisfies Meta<typeof CButton>;
 
 export default meta;
-type Story = StoryObj<typeof CButton>;
+type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  render: (args) => ({
-    components: { CButton },
-    emits: ["click"],
-    setup() {
-      return { args };
-    },
-    template: '<CButton v-bind="args" />',
-  }),
   args: {
     label: "primary",
   },
-  argTypes: {
-    onClick: { action: "onClick" },
+  play: async ({ args, canvasElement }) => {
+    const canvas = within(canvasElement);
+    expect((await canvas.findAllByRole("button"))[0].innerHTML).toContain(
+      args.label
+    );
   },
-};
-
-Default.parameters = { ...Default.parameters };
-Default.play = async ({ canvasElement, args }) => {
-  const canvas = within(canvasElement);
-
-  expect((await canvas.findAllByRole("button"))[0].innerHTML).toContain(
-    args.label
-  );
 };

@@ -1,34 +1,28 @@
-import { fireEvent, within, waitFor } from "@storybook/testing-library";
-import { expect } from "@storybook/jest";
+import { expect, fireEvent, waitFor, within } from "@storybook/test";
 import type { Meta, StoryObj } from "@storybook/vue3";
 import CForm from "../src/components/CForm.vue";
 
-const meta: Meta<typeof CForm> = {
+// More on how to set up stories at: https://storybook.js.org/docs/vue/writing-stories/introduction
+
+const meta = {
   title: "CForm",
   component: CForm,
-};
+  // This component will have an automatically generated docsPage entry: https://storybook.js.org/docs/vue/writing-docs/autodocs
+  tags: ["autodocs"],
+} satisfies Meta<typeof CForm>;
 
 export default meta;
-type Story = StoryObj<typeof CForm>;
+type Story = StoryObj<typeof meta>;
 
-export const ValidStubmit: Story = {
-  render: (args) => ({
-    components: { CForm },
-    setup() {
-      return { args };
-    },
-    template: '<CForm v-bind="args" />',
-  }),
-};
+export const Default: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
 
-ValidStubmit.parameters = { ...ValidStubmit.parameters };
-ValidStubmit.play = async ({ canvasElement }) => {
-  const canvas = within(canvasElement);
+    await fireEvent.click(canvas.getByText("Submit"));
 
-  await fireEvent.click(canvas.getByText("Submit"));
-
-  await waitFor(() => {
-    const validationMessage = canvas.getByText("Please type something");
-    expect(validationMessage.innerText).toBe("Please type something");
-  });
+    await waitFor(() => {
+      const validationMessage = canvas.getByText("Please type something");
+      expect(validationMessage.innerText).toBe("Please type something");
+    });
+  },
 };

@@ -1,31 +1,25 @@
-import { userEvent, within } from "@storybook/testing-library";
+import { userEvent, within } from "@storybook/test";
 import type { Meta, StoryObj } from "@storybook/vue3";
 import CInput from "../src/components/CInput.vue";
 
-const meta: Meta<typeof CInput> = {
+const meta = {
   title: "CInput",
   component: CInput,
   tags: ["autodocs"],
-};
+} satisfies Meta<typeof CInput>;
 
 export default meta;
-type Story = StoryObj<typeof CInput>;
+type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  render: (args) => ({
-    components: { CInput },
-    setup() {
-      return { args };
-    },
-    template: '<CInput v-bind="args" />',
-  }),
-};
+  args: {
+    modelValue: "",
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const Input = canvas.getByLabelText("Input", { selector: "input" });
 
-Default.parameters = { ...Default.parameters };
-Default.play = async ({ canvasElement }) => {
-  const canvas = within(canvasElement);
-  const Input = canvas.getByLabelText("Input", { selector: "input" });
-
-  await userEvent.type(Input, "test");
-  await userEvent.clear(Input);
+    await userEvent.type(Input, "test");
+    await userEvent.clear(Input);
+  },
 };

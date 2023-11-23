@@ -1,23 +1,17 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
 import CSample from "../src/components/CSample.vue";
 
-const meta: Meta<typeof CSample> = {
+const meta = {
   title: "CSample",
   component: CSample,
-};
+  tags: ["autodocs"],
+} satisfies Meta<typeof CSample>;
 
 export default meta;
-type Story = StoryObj<typeof CSample>;
+type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  render: (args) => ({
-    components: { CSample },
-    setup() {
-      return { args };
-    },
-    template: '<CSample v-bind="args" />',
-  }),
   args: {
-    label: "CSample",
+    label: "sample",
   },
 };

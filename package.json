@@ -11,41 +11,35 @@
     "storybook:build": "storybook build",
     "storybook:test": "test-storybook --url http://localhost:6006"
   },
+  "dependencies": {
+    "nuxt": "3.8.2",
+    "quasar": "2.14.0"
+  },
   "devDependencies": {
-    "@nuxt/devtools": "0.6.7",
-    "@parcel/watcher": "2.2.0",
-    "@quasar/extras": "1.16.5",
-    "@quasar/vite-plugin": "1.4.1",
-    "@storybook/addon-actions": "7.1.0",
-    "@storybook/addon-essentials": "7.1.0",
-    "@storybook/addon-interactions": "7.1.0",
-    "@storybook/addon-links": "7.1.0",
-    "@storybook/addon-viewport": "7.1.0",
-    "@storybook/builder-vite": "7.1.0",
-    "@storybook/core-server": "7.1.0",
-    "@storybook/jest": "0.1.0",
-    "@storybook/test-runner": "0.11.0",
-    "@storybook/testing-library": "0.2.0",
-    "@storybook/testing-vue3": "0.0.2",
-    "@storybook/types": "7.1.0",
-    "@storybook/vue3": "7.1.0",
-    "@storybook/vue3-vite": "7.1.0",
+    "@nuxt/devtools": "1.0.3",
+    "@parcel/watcher": "2.3.0",
+    "@quasar/extras": "1.16.8",
+    "@quasar/vite-plugin": "1.6.0",
+    "@storybook/addon-actions": "7.6.0-alpha.7",
+    "@storybook/addon-essentials": "7.6.0-alpha.7",
+    "@storybook/addon-interactions": "7.6.0-alpha.7",
+    "@storybook/addon-links": "7.6.0-alpha.7",
+    "@storybook/addon-viewport": "7.6.0-alpha.7",
+    "@storybook/builder-vite": "7.6.0-alpha.7",
+    "@storybook/core-server": "7.6.0-alpha.7",
+    "@storybook/test": "7.6.0-alpha.7",
+    "@storybook/types": "7.6.0-alpha.7",
+    "@storybook/vue3": "7.6.0-alpha.7",
+    "@storybook/vue3-vite": "7.6.0-alpha.7",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "sass": "1.32.12",
-    "storybook": "7.1.0",
-    "unplugin-auto-import": "0.16.6",
-    "unplugin-vue-components": "0.25.1"
-  },
-  "dependencies": {
-    "nuxt": "3.6.5",
-    "quasar": "2.12.3"
-  },
-  "resolutions": {
-    "sass": "1.32.12"
+    "sass": "1.69.5",
+    "storybook": "7.6.0-alpha.7",
+    "unplugin-auto-import": "0.16.7",
+    "unplugin-vue-components": "0.25.2"
   },
   "volta": {
-    "node": "18.16.1",
-    "npm": "9.5.1"
+    "node": "20.9.0",
+    "pnpm": "8.10.5"
   }
 }
