@@ -6,6 +6,9 @@ const meta = {
   title: "CInput",
   component: CInput,
   tags: ["autodocs"],
+  argTypes: {
+    "onUpdate:modelValue": { name: "update:modelValue" },
+  },
 } satisfies Meta<typeof CInput>;
 
 export default meta;

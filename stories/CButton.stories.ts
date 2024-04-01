@@ -6,6 +6,9 @@ const meta = {
   title: "CButton",
   component: CButton,
   tags: ["autodocs"],
+  argTypes: {
+    onClick: { name: "click" },
+  },
 } satisfies Meta<typeof CButton>;
 
 export default meta;

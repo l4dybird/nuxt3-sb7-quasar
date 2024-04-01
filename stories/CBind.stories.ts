@@ -5,6 +5,9 @@ const meta = {
   title: "CBind",
   component: CBind,
   tags: ["autodocs"],
+  argTypes: {
+    "onUpdate:modelValue": { name: "update:modelValue" },
+  },
 } satisfies Meta<typeof CBind>;
 
 export default meta;
