@@ -1,10 +1,16 @@
 import { mergeConfig } from "vite";
+import { StorybookConfig } from "@storybook/vue3-vite";
 import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
 
 export default {
   stories: ["../stories/**/*.stories.@(js|jsx|ts|tsx)"],
-  framework: "@storybook/vue3-vite",
+  framework: {
+    name: "@storybook/vue3-vite",
+    options: {
+      docgen: "vue-component-meta",
+    },
+  },
   addons: [
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
@@ -12,7 +18,12 @@ export default {
     "@storybook/addon-viewport",
   ],
   core: {
-    builder: "@storybook/builder-vite",
+    builder: {
+      name: "@storybook/builder-vite",
+      options: {
+        viteConfigPath: ".storybook/vite.config.ts",
+      },
+    },
   },
   async viteFinal(config) {
     config.plugins = config.plugins ?? [];
@@ -38,4 +49,4 @@ export default {
       },
     });
   },
-};
+} satisfies StorybookConfig;
