@@ -1,5 +1,5 @@
 {
-  "name": "nuxt3-sb7-quasar",
+  "name": "nuxt3-sb8-quasar",
   "private": true,
   "scripts": {
     "build": "nuxt build",
